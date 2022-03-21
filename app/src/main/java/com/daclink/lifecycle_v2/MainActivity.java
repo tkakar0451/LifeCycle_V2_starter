@@ -32,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate(Bundle) called");
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        setContentView(binding.getRoot());
 
       //TODO: if saved instance state code goes about here
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         button = binding.button;
         mTextView = binding.textView;
