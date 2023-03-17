@@ -1,7 +1,7 @@
 package com.daclink.lifecycle_v2;
 
 
-//Copy from HERE down.
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
