@@ -1,8 +1,8 @@
 
 # MainActictivity.java
 
-1. Create an intent factorty
-	1. staticv
+1. Add saved instance state code from slides (line 38)
+
 
 # ChildActivity
 
