@@ -1,4 +1,4 @@
-
+# Outline
 # MainActictivity.java
 
 1. Add saved instance state code from slides (line 38)
