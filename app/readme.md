@@ -1,3 +1,8 @@
+
+# MainActictivity.java
+
+1. 
+
 # ChildActivity
 
 1. declare a boolean showMessage1Child somewhere near the top of the class (similar to messageOne in MainActivity)
