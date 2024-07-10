@@ -1,7 +1,6 @@
 package com.daclink.lifecycle_v2;
 
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,50 +15,48 @@ import com.daclink.lifecycle_v2.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "LifeCycleDemo";
-    private static final String BUTTON_STATE = "ButtonState";
+    //TODO: add button state code here
 
     ActivityMainBinding binding;
 
     Button button;
     TextView mTextView;
-    boolean messageOne = false;
+    boolean messageOne = true;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate(Bundle) called");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
 
-        if (savedInstanceState != null) {
-            messageOne = savedInstanceState.getBoolean(BUTTON_STATE, true);
-        }
+        //TODO: if saved instance state code goes about here
 
         button = binding.button;
         mTextView = binding.textView;
-        getMessage();
+
+        //TODO: we will add a call to getMessage here
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                messageOne = !messageOne;
-                getMessage();
+                if (messageOne){
+                    mTextView.setText(R.string.message2);
+                    messageOne = false;
+                } else {
+                    mTextView.setText(R.string.message1);
+                    messageOne = true;
+                }
             }
         });
 
-        //TODO: add long click listener
 
     }
 
-    private void getMessage(){
-        if (messageOne){
-            mTextView.setText(R.string.message2);
-        } else {
-            mTextView.setText(R.string.message1);
-        }
-    }
+    //TODO: add getMessage() about here
 
     @Override
     public void onStart() {
@@ -79,12 +76,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onPause() called");
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        Log.i(TAG, "onSaveInstanceState called");
-        savedInstanceState.putBoolean(BUTTON_STATE, messageOne);
-    }
+    //TODO: Override onSaveInstanceState here.
+
 
     @Override
     public void onStop() {
